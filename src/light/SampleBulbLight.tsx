@@ -1,6 +1,19 @@
+import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
+import { PointLight } from "three";
+
 function SampleBulbLight() {
+  const ref = useRef<PointLight>(null);
+  useFrame((state, delta) => {
+    if (!ref.current) {
+      return;
+    }
+    const time = Date.now() * 0.0005;
+    ref.current.position.y = Math.cos(time) * 0.75 + 1.25;
+  });
   return (
     <pointLight
+      ref={ref}
       color={0xffee88}
       intensity={1}
       distance={100}

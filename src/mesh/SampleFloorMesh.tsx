@@ -19,7 +19,7 @@ function SampleFloorMesh() {
   }, [bumpMapTexture, mapTexture, roughnessMapTexture]);
 
   return (
-    <mesh receiveShadow position={[0, -1, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+    <mesh receiveShadow position={[0, -0.3, 0]} rotation={[-Math.PI / 2, 0, 0]}>
       <planeGeometry args={[20, 20]} />
       <meshStandardMaterial
         roughness={0.8}
